@@ -23,7 +23,7 @@
     "react-native": ">= 0.40.x"
   },
   "dependencies": {
-    "react-native-wkwebview-reborn": ">= 1.0.0"
+    "react-native-wkwebview-reborn": "^2.0.0"
   },
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0"
