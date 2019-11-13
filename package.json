@@ -20,10 +20,7 @@
   "homepage": "https://github.com/wbroek/react-native-powerbi#readme",
   "peerDependencies": {
     "react": ">= 15.x",
-    "react-native": ">= 0.40.x"
-  },
-  "dependencies": {
-    "react-native-wkwebview-reborn": "^2.0.0"
+    "react-native": "^0.59.1"
   },
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0"
