@@ -1,14 +1,12 @@
 # PowerBI Embed for React Native
 
-This component opens embeded PowerBI reports. It uses the WebView on Android and the WKWebView on iOS the display them.
+This component opens embeded PowerBI reports. It uses the WebView on Android and iOS the display them.
 
 ## Installation
 
 ```
 $ npm install --save react-native-powerbi
 ```
-
-The solution depends on [_react-native-wkwebview-reborn_](https://github.com/CRAlpha/react-native-wkwebview) for iOS, please refer to them if you have any troubles on iOS with linkink.
 
 ## Usage
 
@@ -67,3 +65,4 @@ const config = {
 ## Authors
 
 * [Wouter van den Broek](https://twitter.com/wbroek)
+* [Jakub Jemieljanczuk]()
