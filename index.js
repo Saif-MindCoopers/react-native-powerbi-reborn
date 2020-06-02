@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WebView from './components/webView';
+import { WebView } from 'react-native-webview';
 
 class PowerBIEmbed extends Component {
   constructor(props) {
