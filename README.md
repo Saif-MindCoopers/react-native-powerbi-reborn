@@ -61,8 +61,3 @@ const config = {
 
 - More layout options
 - Event communication from PowerBI to component
-
-## Authors
-
-* [Wouter van den Broek](https://twitter.com/wbroek)
-* [Jakub Jemieljanczuk]()
