@@ -5,12 +5,12 @@ This component opens embeded PowerBI reports. It uses the WebView on Android and
 ## Installation
 
 ```
-$ npm install --save react-native-powerbi
+$ npm install --save react-native-powerbi-reborn
 ```
 
 ## Usage
 
-`import PowerBIEmbed from 'react-native-powerbi';`
+`import PowerBIEmbed from 'react-native-powerbi-reborn';`
 
 For a report to display you need at least three parts: AccessToken, Embed URL and the ID of the report. (these can be obtained thru the rest api)
 
