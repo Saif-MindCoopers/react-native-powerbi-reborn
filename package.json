@@ -21,7 +21,7 @@
   "peerDependencies": {
     "react": ">= 15.x",
     "react-native":  ">= 0.40.x",
-    "react-native-webview": ">=6.9.0"
+    "react-native-webview": "^11.22.2",
   },
   "devDependencies": {
     "babel-preset-react-native": "^4.0.0"
