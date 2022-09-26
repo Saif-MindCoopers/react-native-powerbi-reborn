@@ -5,7 +5,7 @@ This component opens embeded PowerBI reports. It uses the WebView on Android and
 ## Installation
 
 ```
-$ npm install --save https://github.com/Saif-MindCoopers/react-native-powerbi-reborn.git
+$ npm install --save https://github.com/mindcoopers-prod/react-native-powerbi-reborn.git
 ```
 
 ## Usage
