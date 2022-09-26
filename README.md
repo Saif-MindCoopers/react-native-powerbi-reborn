@@ -1,6 +1,6 @@
 # PowerBI Embed for React Native
 
-This component opens embeded PowerBI reports. It uses the WebView on Android and iOS the display them.
+This component opens embeded PowerBI reports. It uses the WebView on Android and iOS the display them. This package is compatiable with new architecture of react-native (v0.70).
 
 ## Installation
 
