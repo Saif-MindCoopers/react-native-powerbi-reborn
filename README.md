@@ -57,7 +57,3 @@ const config = {
     />
 ```
 
-## Roadmap / todo
-
-- More layout options
-- Event communication from PowerBI to component
