@@ -57,3 +57,4 @@ const config = {
     />
 ```
 
+supports webview onShouldStartLoadWithRequest
