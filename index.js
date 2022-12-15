@@ -2,39 +2,39 @@ import React, { Component } from 'react';
 import { WebView } from 'react-native-webview';
 
 class PowerBIEmbed extends Component {
-  constructor(props) {
-    super(props);
-    this.configuration = this.setConfiguration(props);
-  }
-
-  setConfiguration = (props) => {
-    let embedConfiguration = {
-      type: 'report',
-      tokenType: 1,
-      accessToken: props.accessToken,
-      embedUrl: props.embedUrl,
-      id: props.id,
-      settings: {
-        filterPaneEnabled: false,
-        navContentPaneEnabled: false,
-        layoutType: 2,
-      },
-    };
-    if (('language' in props)) {
-      embedConfiguration.settings.localeSettings = {
-        language: props.language,
-        formatLocale: props.language,
-      };
+    constructor(props) {
+        super(props);
+        this.configuration = this.setConfiguration(props);
     }
 
-    if (('embedConfiguration' in props)) {
-      embedConfiguration = this.merge(embedConfiguration, props.embedConfiguration);
+    setConfiguration = (props) => {
+        let embedConfiguration = {
+            type: 'report',
+            tokenType: 1,
+            accessToken: props.accessToken,
+            embedUrl: props.embedUrl,
+            id: props.id,
+            settings: {
+                filterPaneEnabled: false,
+                navContentPaneEnabled: false,
+                layoutType: 2,
+            },
+        };
+        if (('language' in props)) {
+            embedConfiguration.settings.localeSettings = {
+                language: props.language,
+                formatLocale: props.language,
+            };
+        }
+
+        if (('embedConfiguration' in props)) {
+            embedConfiguration = this.merge(embedConfiguration, props.embedConfiguration);
+        }
+
+        return JSON.stringify(embedConfiguration);
     }
 
-    return JSON.stringify(embedConfiguration);
-  }
-
-  getTemplate = configuration => (`<!doctype html>
+    getTemplate = configuration => (`<!doctype html>
     <html>
     <head>
         <meta charset="utf-8" />
@@ -65,22 +65,26 @@ class PowerBIEmbed extends Component {
         </script>
     </body>
     </html>`
-  );
-
-  merge = (target, source) => {
-    for (const key of Object.keys(source)) {
-      if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]));
-    }
-    Object.assign(target || {}, source);
-    return target;
-  }
-
-  render() {
-    const html = this.getTemplate(this.configuration);
-    return (
-      <WebView source={{ html }} />
     );
-  }
+
+    merge = (target, source) => {
+        for (const key of Object.keys(source)) {
+            if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]));
+        }
+        Object.assign(target || {}, source);
+        return target;
+    }
+
+    render() {
+        const html = this.getTemplate(this.configuration);
+        return (
+            <WebView
+                source={{ html }}
+                originWhitelist={['*']}
+                onShouldStartLoadWithRequest={(state) => this.props.webview.onShouldStartLoadWithRequest(state)}
+            />
+        );
+    }
 }
 
 export default PowerBIEmbed;
