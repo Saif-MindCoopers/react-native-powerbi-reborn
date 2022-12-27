@@ -81,6 +81,12 @@ class PowerBIEmbed extends Component {
             <WebView
                 source={{ html }}
                 originWhitelist={['*']}
+                ref={(ref) => (this.webview = ref)}
+                onContentProcessDidTerminate={(syntheticEvent) => {
+                    const { nativeEvent } = syntheticEvent;
+                    console.warn('Content process terminated, reloading', nativeEvent);
+                    this.webview.reload();
+                }}
                 onShouldStartLoadWithRequest={(state) => this.props.webview.onShouldStartLoadWithRequest(state)}
             />
         );
